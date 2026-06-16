@@ -146,28 +146,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- REVIEWS ---------- */}
+      {/* ---------- REVIEWS (Sektion 7 – Option 7: Split Panel + Liste) ---------- */}
       <section className="section-y bg-cream-2/60">
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Stimmen</p>
             <h2 className="t-h1 mt-4">5,0 Sterne – mit Herz und Können</h2>
           </Reveal>
-          <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <StaggerItem key={r.name}>
-                <figure className="card h-full p-7">
-                  <span className="flex text-gold">
-                    {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
-                  </span>
-                  <blockquote className="prose-body mt-4 text-ink/80">&bdquo;{r.text}&ldquo;</blockquote>
-                  <figcaption className="mt-5 text-sm font-medium text-oxblood">
-                    {r.name} <span className="font-normal text-ink/50">· {r.source}</span>
-                  </figcaption>
-                </figure>
-              </StaggerItem>
-            ))}
-          </Stagger>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+            {/* Rating-Panel + Bewerten-Button */}
+            <Reveal>
+              <div className="flex h-full flex-col justify-center rounded-[2rem] bg-oxblood-deep p-8 text-center text-cream shadow-card">
+                <p className="font-display text-[3.5rem] leading-none">5,0</p>
+                <span className="mt-2 flex justify-center text-gold">
+                  {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
+                </span>
+                <p className="mt-2 text-sm text-cream/70">61 Bewertungen gesamt</p>
+                <div className="mt-5 space-y-2 text-sm">
+                  <p className="rounded-xl bg-cream/10 px-3 py-2">Google <strong className="text-gold">5,0</strong> · 31 Rezensionen</p>
+                  <p className="rounded-xl bg-cream/10 px-3 py-2">Infobel <strong className="text-gold">5,0</strong> · 30 Rezensionen</p>
+                </div>
+                {/* TODO: durch echten Google-Rezensions-Link ersetzen */}
+                <a
+                  href={studio.maps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
+                >
+                  ★ Bewertung abgeben
+                </a>
+              </div>
+            </Reveal>
+
+            {/* Rezensionen-Liste */}
+            <Stagger className="space-y-4">
+              {reviews.map((r) => (
+                <StaggerItem key={r.name}>
+                  <figure className="card p-6">
+                    <span className="flex text-gold">
+                      {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
+                    </span>
+                    <blockquote className="prose-body mt-3 text-ink/80">&bdquo;{r.text}&ldquo;</blockquote>
+                    <figcaption className="mt-4 text-sm font-medium text-oxblood">
+                      {r.name} <span className="font-normal text-ink/50">· {r.source}</span>
+                    </figcaption>
+                  </figure>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </section>
 
