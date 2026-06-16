@@ -5,6 +5,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import HeroVideo from "@/components/HeroVideo";
 import CarouselGallery from "@/components/CarouselGallery";
 import RatenTeaser from "@/components/RatenTeaser";
+import FinalCta from "@/components/FinalCta";
 import { iconFor, StarIcon } from "@/components/Icons";
 import { JsonLd, faqSchema } from "@/lib/schema";
 import { values, reviews, faqs } from "@/lib/content";
@@ -203,24 +204,8 @@ export default function Home() {
       {/* ---------- RATEN TEASER (Sektion 8 – Mix Option 9 Dialog + Option 6 Rechner) ---------- */}
       <RatenTeaser />
 
-      {/* ---------- FINAL CTA ---------- */}
-      <section className="section-y bg-oxblood text-cream paper relative overflow-hidden">
-        <div className="container-x relative text-center">
-          <Reveal>
-            <h2 className="t-h1 text-cream">Bereit für dein Tattoo?</h2>
-            <p className="prose-body mx-auto mt-5 text-cream/80">
-              Schick mir deine Idee – ich freu mich auf dich. Telefonisch erreichbar
-              Dienstag bis Freitag von 10:00 bis 16:00 Uhr.
-            </p>
-            <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Link href="/kontakt" className="btn bg-cream text-oxblood hover:bg-white">Termin anfragen</Link>
-              <a href={`tel:${studio.phoneRaw}`} className="btn btn-ghost border-cream/40 text-cream hover:bg-cream hover:text-oxblood">
-                {studio.phoneDisplay}
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      {/* ---------- FINAL CTA (Sektion 9 – Mix Option 10 Porträt-Einladung + Option 9 Karte) ---------- */}
+      <FinalCta />
     </>
   );
 }
