@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 const tiers = [
-  { betrag: "50 €", raten: "ab ca. 8,90 € / Monat" },
-  { betrag: "100 €", raten: "ab ca. 17,80 € / Monat" },
+  { betrag: "99 €", raten: "ab ca. 17,60 € / Monat" },
+  { betrag: "150 €", raten: "ab ca. 26,70 € / Monat" },
   { betrag: "200 €", raten: "ab ca. 35,60 € / Monat" },
   { betrag: "300 €", raten: "ab ca. 53,40 € / Monat" },
   { betrag: "400 €", raten: "ab ca. 71,20 € / Monat" },

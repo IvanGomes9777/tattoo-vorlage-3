@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Reveal, Stagger, StaggerItem } from "./Reveal";
 
-const MIN = 50;
+const MIN = 99;
 const MAX = 800;
 const FACTOR = 0.178; // Richtwert Monatsrate
 
@@ -20,7 +20,7 @@ const bubbles = [
  * Links der lockere Chat, rechts der interaktive Rechner mit Live-Monatsrate.
  */
 export default function RatenTeaser() {
-  const [amount, setAmount] = useState(200);
+  const [amount, setAmount] = useState(199);
   const rate = (amount * FACTOR).toFixed(2).replace(".", ",");
   const pct = ((amount - MIN) / (MAX - MIN)) * 100;
 
