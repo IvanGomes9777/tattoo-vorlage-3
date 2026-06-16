@@ -27,17 +27,17 @@ export default function HeroVideo() {
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
       {/* Background layer: dark base → video on top → gradients on top */}
       <div className="absolute inset-0 -z-10 bg-oxblood-deep">
-        {reduce ? (
-          // Reduced motion: statisches Studio-Bild statt Video
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url(/galerie-clitzeclein.jpg)" }}
-          />
-        ) : (
+        {/* Immer sichtbare Foto-Basis (Fallback + reduced motion + Autoplay blockiert) */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/galerie-clitzeclein.jpg)" }}
+        />
+        {!reduce && (
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover"
             src="/hero-loop.mp4"
+            poster="/galerie-clitzeclein.jpg"
             autoPlay
             muted
             loop
