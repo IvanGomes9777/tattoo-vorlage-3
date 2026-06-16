@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import HeroVideo from "@/components/HeroVideo";
-import Gallery from "@/components/Gallery";
+import CarouselGallery from "@/components/CarouselGallery";
 import { iconFor, StarIcon } from "@/components/Icons";
 import { JsonLd, faqSchema } from "@/lib/schema";
 import { values, reviews, faqs } from "@/lib/content";
@@ -138,7 +138,7 @@ export default function Home() {
             </p>
           </Reveal>
           <div className="mt-12">
-            <Gallery limit={8} />
+            <CarouselGallery />
           </div>
           <Reveal className="mt-12 text-center">
             <Link href="/galerie" className="btn btn-primary">Ganze Galerie ansehen</Link>
