@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
+import HeroVideo from "@/components/HeroVideo";
 import Gallery from "@/components/Gallery";
 import { iconFor, StarIcon } from "@/components/Icons";
 import { JsonLd, faqSchema } from "@/lib/schema";
@@ -14,68 +15,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1612459284970-e8f027596582?auto=format&fit=crop&w=1600&q=70";
-
 export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
 
-      {/* ---------- HERO ---------- */}
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src={HERO_IMG}
-            alt="Tätowiererin Chiara bei der Arbeit im Clitze Clein Atelier in Münster"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-cream/92 via-cream/80 to-cream" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/55 to-transparent" />
-        </div>
-
-        <div className="container-x relative pt-28 pb-16">
-          <Reveal>
-            <p className="eyebrow">Vegan · Nachhaltig · Münster</p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="h-display mt-5 max-w-3xl">
-              Dein <span className="italic text-gold">clitze cleines</span> Tattoo Atelier.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="lead mt-6 text-ink/75">
-              22 m², 100 % vegan und nachhaltig – mitten in Münster. Hier entsteht
-              deine Kunst in entspannter Atmosphäre. Kein Urteil, keine Berührungsängste.
-              Einfach dein Safespace. <span className="font-medium text-oxblood">Everybody&rsquo;s welcome.</span>
-            </p>
-          </Reveal>
-          <Reveal delay={0.24}>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link href="/kontakt" className="btn btn-primary">Termin anfragen</Link>
-              <Link href="/galerie" className="btn btn-ghost">Galerie ansehen</Link>
-            </div>
-          </Reveal>
-          <Reveal delay={0.34}>
-            <div className="mt-10 flex items-center gap-3 text-sm text-ink/70">
-              <span className="flex text-gold">
-                {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
-              </span>
-              <span>
-                <strong className="text-oxblood">5,0</strong> bei Google · seit {studio.founded} mit Herz dabei
-              </span>
-            </div>
-          </Reveal>
-        </div>
-
-        <span className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.3em] text-ink/40 md:flex">
-          Scrollen
-          <span className="h-10 w-px animate-pulse bg-ink/30" />
-        </span>
-      </section>
+      {/* ---------- HERO (Video, Sektion 2 – Option 2) ---------- */}
+      <HeroVideo />
 
       {/* ---------- VALUES ---------- */}
       <section className="section-y bg-cream-2/60">
