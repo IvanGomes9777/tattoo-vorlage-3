@@ -8,7 +8,7 @@ import { studio } from "@/lib/studio";
 export const metadata: Metadata = {
   title: "Termin & Kontakt – Tattoo Atelier in Münster",
   description:
-    "Termin im Clitze Cleine Tattoo Atelier in Münster anfragen. Hammer Str. 174, 48153 Münster. Telefonisch erreichbar Di–Fr 11:00–16:00 Uhr. Jetzt Idee schicken.",
+    "Termin im Clitze Cleine Tattoo Atelier in Münster anfragen. Hammer Str. 174, 48153 Münster. Telefonisch erreichbar Di–Fr 10:00–16:00 Uhr. Jetzt Idee schicken.",
   alternates: { canonical: "/kontakt" },
 };
 

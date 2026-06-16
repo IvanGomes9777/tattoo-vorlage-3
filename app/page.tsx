@@ -111,12 +111,11 @@ export default function Home() {
           <Reveal>
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] shadow-card">
-                {/* REAL-PHOTO: replace with interior photo of the atelier */}
                 <Image
-                  src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=1000&q=70"
-                  alt="Innenansicht des Clitze Cleine Tattoo Ateliers"
-                  width={1000}
-                  height={1200}
+                  src="/galerie-clitzeclein.jpg"
+                  alt="Innenansicht des Clitze Cleine Tattoo Ateliers in Münster mit goldenem Widderkopf und roter Atelier-Tür"
+                  width={2048}
+                  height={1536}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -150,12 +149,11 @@ export default function Home() {
         <div className="container-x relative grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
             <div className="overflow-hidden rounded-[2rem] shadow-card">
-              {/* REAL-PHOTO: replace with portrait of Chiara */}
               <Image
-                src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=900&q=70"
-                alt="Chiara, Inhaberin und Tätowiererin von Clitze Clein"
-                width={900}
-                height={1100}
+                src="/chiara.jpg"
+                alt="Chiara, Inhaberin und Tätowiererin von Clitze Clein, lachend in ihrem Atelier"
+                width={1290}
+                height={1330}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -247,7 +245,7 @@ export default function Home() {
             <h2 className="h-1 text-cream">Bereit für dein Tattoo?</h2>
             <p className="prose-body mx-auto mt-5 text-cream/80">
               Schick mir deine Idee – ich freu mich auf dich. Telefonisch erreichbar
-              Dienstag bis Freitag von 11:00 bis 16:00 Uhr.
+              Dienstag bis Freitag von 10:00 bis 16:00 Uhr.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
               <Link href="/kontakt" className="btn bg-cream text-oxblood hover:bg-white">Termin anfragen</Link>

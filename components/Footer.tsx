@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import LogoEmblem from "./LogoEmblem";
 import { studio } from "@/lib/studio";
 
 export default function Footer() {
@@ -7,9 +7,7 @@ export default function Footer() {
     <footer className="relative mt-auto overflow-hidden bg-oxblood-deep text-cream/80 paper">
       <div className="container-x relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="text-cream">
-            <Logo />
-          </div>
+          <LogoEmblem className="w-48 text-cream" />
           <p className="prose-body mt-5 max-w-sm text-cream/70">
             Dein clitze cleines Tattoo Atelier in Münster. 22 m², 100 % vegan,
             nachhaltig und für alle. Everybody&rsquo;s welcome.
@@ -56,7 +54,7 @@ export default function Footer() {
             <p>
               <a href={`tel:${studio.phoneRaw}`} className="transition-colors hover:text-gold">{studio.phone}</a>
             </p>
-            <p className="text-cream/60">Di–Fr · 11:00–16:00 Uhr<br />Termine nach Vereinbarung</p>
+            <p className="text-cream/60">Di–Fr · 10:00–16:00 Uhr<br />Termine nach Vereinbarung</p>
           </address>
         </div>
       </div>

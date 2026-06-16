@@ -54,6 +54,7 @@ export const metadata: Metadata = {
     title: "Clitze Clein – Veganes Tattoo Atelier in Münster",
     description:
       "Dein clitze cleines, veganes & nachhaltiges Tattoo Atelier in Münster. Everybody's welcome.",
+    images: [{ url: "/galerie-clitzeclein.jpg", width: 2048, height: 1536, alt: "Clitze Clein Tattoo Atelier in Münster" }],
   },
   robots: { index: true, follow: true },
 };

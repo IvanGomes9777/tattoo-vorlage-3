@@ -14,7 +14,7 @@ export function baseGraph() {
         "@id": ORG_ID,
         name: studio.name,
         url: studio.url,
-        logo: { "@type": "ImageObject", url: `${studio.url}/logo.png` },
+        logo: { "@type": "ImageObject", url: `${studio.url}/clintzecleintattoo.png` },
         sameAs: [studio.instagram, studio.facebook, studio.maps],
         contactPoint: {
           "@type": "ContactPoint",
@@ -36,7 +36,7 @@ export function baseGraph() {
         "@type": ["LocalBusiness", "TattooParlor"],
         "@id": LOCAL_ID,
         name: studio.name,
-        image: `${studio.url}/studio.jpg`,
+        image: `${studio.url}/galerie-clitzeclein.jpg`,
         url: studio.url,
         telephone: studio.phoneRaw,
         priceRange: "€€",
@@ -63,7 +63,7 @@ export function baseGraph() {
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "11:00",
+            opens: "10:00",
             closes: "16:00",
           },
         ],

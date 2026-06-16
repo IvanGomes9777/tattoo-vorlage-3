@@ -32,12 +32,11 @@ export default function StudioPage() {
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <div className="overflow-hidden rounded-[2rem] shadow-card">
-              {/* REAL-PHOTO: interior of the atelier */}
               <Image
-                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=70"
-                alt="Gemütlicher Behandlungsbereich im Clitze Clein Atelier"
-                width={1000}
-                height={1150}
+                src="/galerie-clitzeclein.jpg"
+                alt="Behandlungsbereich im Clitze Clein Atelier mit Marmorboden, Spiegel und roter Atelier-Tür"
+                width={2048}
+                height={1536}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -84,12 +83,11 @@ export default function StudioPage() {
         <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <div className="overflow-hidden rounded-[2rem] shadow-card">
-              {/* REAL-PHOTO: portrait of Chiara */}
               <Image
-                src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=900&q=70"
-                alt="Chiara, Tätowiererin und Inhaberin von Clitze Clein"
-                width={900}
-                height={1080}
+                src="/chiara.jpg"
+                alt="Chiara, Tätowiererin und Inhaberin von Clitze Clein, lachend in ihrem Atelier"
+                width={1290}
+                height={1330}
                 className="h-full w-full object-cover"
               />
             </div>

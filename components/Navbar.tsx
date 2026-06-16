@@ -46,8 +46,8 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-x flex items-center justify-between py-3.5">
-        <Link href="/" className="text-oxblood transition-opacity hover:opacity-80" aria-label="Zur Startseite">
-          <Logo />
+        <Link href="/" className="transition-opacity hover:opacity-80" aria-label="Zur Startseite">
+          <Logo className="h-12 w-auto sm:h-14" />
         </Link>
 
         <ul className="hidden items-center gap-7 md:flex">

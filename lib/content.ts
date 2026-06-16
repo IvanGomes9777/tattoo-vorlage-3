@@ -23,7 +23,7 @@ export const gallery: Galleryitem[] = [
   { src: U("photo-1542856391-010fb87dcfed"), alt: "Aquarell-Gemälde in warmen Farben", category: "kunst", caption: "Acryl auf Leinwand" },
   { src: U("photo-1499781350541-7783f6c6a0c8"), alt: "Abstraktes Gemälde mit Pinselstrichen", category: "kunst", caption: "Original · handgemalt" },
   { src: U("photo-1513364776144-60967b0f800f"), alt: "Buntes Kunstwerk an der Wand", category: "kunst", caption: "Studio-Kunst" },
-  { src: U("photo-1607344645866-009c320b63e0"), alt: "Helles, modernes Tattoo-Studio", category: "studio", caption: "Behandlungsraum" },
+  { src: "/galerie-clitzeclein.jpg", alt: "Innenansicht des Clitze Cleine Tattoo Ateliers in Münster", category: "studio", caption: "Unser Atelier in Münster" },
   { src: U("photo-1521590832167-7bcbfaa6381f"), alt: "Gemütliche Studio-Ecke mit Sessel", category: "studio", caption: "Dein Safespace" },
   { src: U("photo-1556760544-74068565f05c"), alt: "Tattoo-Equipment ordentlich vorbereitet", category: "studio", caption: "Steril vorbereitet" },
   { src: U("photo-1503342217505-b0a15ec3261c"), alt: "Minimalistisches Tattoo am Handgelenk", category: "tattoo", caption: "Minimal · Handgelenk" },
@@ -66,7 +66,7 @@ export const faqs = [
   },
   {
     q: "Wie bekomme ich einen Termin?",
-    a: "Am schnellsten per Telefon oder WhatsApp unter 0176 431 52 785 oder über das Kontaktformular auf dieser Seite. Telefonisch erreichbar sind wir Dienstag bis Freitag von 11:00 bis 16:00 Uhr. Schick uns gern direkt deine Idee, Referenzbilder und die gewünschte Körperstelle mit.",
+    a: "Am schnellsten per Telefon oder WhatsApp unter 0176 431 52 785 oder über das Kontaktformular auf dieser Seite. Telefonisch erreichbar sind wir Dienstag bis Freitag von 10:00 bis 16:00 Uhr. Schick uns gern direkt deine Idee, Referenzbilder und die gewünschte Körperstelle mit.",
   },
   {
     q: "Wo finde ich das Atelier?",
