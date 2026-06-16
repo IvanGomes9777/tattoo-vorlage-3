@@ -89,13 +89,13 @@ export default function HeroVideo() {
           className="mt-9 flex flex-wrap gap-4"
         >
           <Link
-            href="/kontakt"
+            href="/#kontakt"
             className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3.5 text-sm font-semibold text-oxblood-deep shadow-[0_10px_30px_-10px_rgba(176,138,79,0.7)] transition-transform hover:scale-105 active:scale-95"
           >
             <span aria-hidden>🌱</span> Termin anfragen
           </Link>
           <Link
-            href="/galerie"
+            href="/#galerie"
             className="inline-flex items-center rounded-full border border-cream/40 px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-cream hover:text-oxblood"
           >
             Galerie ansehen
