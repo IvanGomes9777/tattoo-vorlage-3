@@ -38,8 +38,8 @@ export default function Home() {
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
             {values.map((v) => (
               <StaggerItem key={v.title}>
-                <article className="card paper relative h-full overflow-hidden p-8">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxblood/8 text-oxblood">
+                <article className="card paper relative h-full overflow-hidden p-8 transition-transform duration-300 hover:-translate-y-1.5">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxblood/8 p-3.5 text-oxblood">
                     {iconFor(v.icon)}
                   </span>
                   <h3 className="mt-6 font-display text-2xl">{v.title}</h3>
