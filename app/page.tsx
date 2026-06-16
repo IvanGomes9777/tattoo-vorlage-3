@@ -23,7 +23,7 @@ export default function Home() {
       {/* ---------- HERO (Video, Sektion 2 – Option 2) ---------- */}
       <HeroVideo />
 
-      {/* ---------- VALUES ---------- */}
+      {/* ---------- VALUES (Sektion 3) ---------- */}
       <section className="section-y bg-cream-2/60">
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
