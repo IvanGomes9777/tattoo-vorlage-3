@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { simpleRateLimit } from "@/lib/rateLimit";
 import { sanitizeText, validateEmail } from "@/lib/validation";
+import { sendStudioMail } from "@/lib/mail";
 
 export const runtime = "nodejs";
 
@@ -39,7 +40,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Betrag muss zwischen 99 € und 5.000 € liegen." }, { status: 400 });
   }
 
-  // TODO: Mailversand an das Studio anbinden (Resend/Nodemailer via Env).
+  await sendStudioMail({
+    subject: `Raten-Anfrage über ${amount} € von ${vorname} ${nachname}`,
+    replyTo: email,
+    text: `Raten-Anfrage:\nBetrag: ${amount} €\nBeispiel-Laufzeit: ${body.term} Monate\n\nName: ${vorname} ${nachname}\nE-Mail: ${email}\nTelefon: ${body.tel || "—"}\nAdresse: ${body.strasse || ""}, ${body.plz || ""} ${ort}\n\nMotiv: ${body.stelle || "—"} · ${body.groesse || "—"}\n${body.briefing || ""}`,
+  });
   console.info("[raten] neue Anfrage", { name: `${vorname} ${nachname}`, email, ort, amount, term: body.term, ip });
 
   return NextResponse.json({ ok: true, message: "Anfrage erhalten." });

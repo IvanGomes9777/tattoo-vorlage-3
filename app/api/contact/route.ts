@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { simpleRateLimit } from "@/lib/rateLimit";
 import { sanitizeText, validateEmail, validatePhone } from "@/lib/validation";
+import { sendStudioMail } from "@/lib/mail";
 
 export const runtime = "nodejs";
 
@@ -50,9 +51,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Bitte stimme der Datenschutzerklärung zu." }, { status: 400 });
   }
 
-  // 4. Deliver the message.
-  // TODO: connect a mail provider (e.g. Resend / Nodemailer) via env vars.
-  //       Until then the request is validated and logged server-side.
+  // 4. Per E-Mail an das Studio senden (greift, sobald RESEND_API_KEY gesetzt ist).
+  await sendStudioMail({
+    subject: `Neue Anfrage von ${name}`,
+    replyTo: email,
+    text: `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone || "—"}\n\nNachricht:\n${message}`,
+  });
   console.info("[contact] new enquiry", { name, email, phone, ip, length: message.length });
 
   return NextResponse.json({
