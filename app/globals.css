@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------
+   Clitze Clein – Design Tokens
+   Warm boutique atelier: cream canvas, oxblood ink, gold accents
+----------------------------------------------------------------- */
+@theme {
+  --color-cream: #fbf7f1;
+  --color-cream-2: #f4ece1;
+  --color-cream-3: #ede2d3;
+  --color-oxblood: #4a1212;
+  --color-oxblood-deep: #2e0a0a;
+  --color-oxblood-soft: #6e2222;
+  --color-gold: #b08a4f;
+  --color-gold-soft: #c9a86a;
+  --color-ink: #2a1a1a;
+  --color-rose: #d8a7a0;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 40px -12px rgba(46, 10, 10, 0.18);
+  --shadow-card: 0 18px 50px -20px rgba(46, 10, 10, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-oxblood);
+  color: var(--color-cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--color-oxblood);
+}
+
+/* Fluid type helpers */
+.h-display {
+  font-size: clamp(2.5rem, 1.2rem + 6vw, 6rem);
+  letter-spacing: -0.02em;
+}
+.h-1 {
+  font-size: clamp(2rem, 1.2rem + 3.5vw, 3.75rem);
+  letter-spacing: -0.015em;
+}
+.h-2 {
+  font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.75rem);
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+  color: var(--color-gold);
+}
+.lead {
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+.prose-body {
+  font-size: clamp(1rem, 0.97rem + 0.2vw, 1.125rem);
+  line-height: 1.75;
+  max-width: 68ch;
+}
+
+/* Layout container */
+.container-x {
+  width: 100%;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-y {
+  padding-block: clamp(4rem, 8vw, 8.5rem);
+}
+
+/* Decorative flourish line (echoes the logo's swash) */
+.flourish {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-soft),
+    transparent
+  );
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.25s ease, background-color 0.25s ease,
+    color 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-primary {
+  background: var(--color-oxblood);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-soft);
+}
+.btn-primary:hover {
+  background: var(--color-oxblood-deep);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  border: 1px solid color-mix(in srgb, var(--color-oxblood) 30%, transparent);
+  color: var(--color-oxblood);
+  background: transparent;
+}
+.btn-ghost:hover {
+  background: var(--color-oxblood);
+  color: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid var(--color-cream-3);
+  border-radius: 1.4rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+/* Grain / paper texture overlay for warmth */
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(
+    rgba(74, 18, 18, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 4px 4px;
+}
+
+/* Legal / prose pages */
+.legal h2 {
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.7rem);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal h3 {
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-oxblood-soft);
+}
+.legal p,
+.legal li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--color-ink) 82%, transparent);
+}
+.legal p {
+  margin-bottom: 1rem;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.legal a {
+  color: var(--color-oxblood);
+  text-decoration: underline;
+}
+.legal strong {
+  color: var(--color-oxblood);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
