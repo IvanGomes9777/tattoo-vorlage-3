@@ -5,14 +5,14 @@
    Warm boutique atelier: cream canvas, oxblood ink, gold accents
 ----------------------------------------------------------------- */
 @theme {
-  --color-cream: #fbf7f1;
-  --color-cream-2: #f4ece1;
-  --color-cream-3: #ede2d3;
+  --color-cream: #f7f0e2;
+  --color-cream-2: #efe4d1;
+  --color-cream-3: #e4d6bd;
   --color-oxblood: #4a1212;
   --color-oxblood-deep: #2e0a0a;
   --color-oxblood-soft: #6e2222;
   --color-gold: #b08a4f;
-  --color-gold-soft: #c9a86a;
+  --color-gold-soft: #cda867;
   --color-ink: #2a1a1a;
   --color-rose: #d8a7a0;
 
@@ -149,12 +149,15 @@ h1, h2, h3, h4 {
 
 /* Card */
 .card {
-  background: #fff;
+  background: #fffdf8;
   border: 1px solid var(--color-cream-3);
   border-radius: 1.4rem;
   box-shadow: var(--shadow-soft);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 55%, var(--color-cream-3));
 }
 
 /* Grain / paper texture overlay for warmth */
