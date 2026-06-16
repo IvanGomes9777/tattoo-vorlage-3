@@ -28,7 +28,7 @@ export default function Home() {
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Warum Clitze Clein</p>
-            <h2 className="h-1 mt-4">Die kleinste Dekadenz in Münster</h2>
+            <h2 className="t-h1 mt-4">Die kleinste Dekadenz in Münster</h2>
             <p className="prose-body mx-auto mt-5 text-ink/70">
               Tattoo-Zubehör ist oft schon vegan – aber nachhaltig? Oder alles, was
               über das Equipment hinausgeht? Fehlanzeige. Außer im Clitze Clein.
@@ -74,7 +74,7 @@ export default function Home() {
 
           <Reveal delay={0.12}>
             <p className="eyebrow">Das Atelier</p>
-            <h2 className="h-1 mt-4">Ein Safespace, in dem alles vegan ist</h2>
+            <h2 className="t-h1 mt-4">Ein Safespace, in dem alles vegan ist</h2>
             <p className="prose-body mt-5 text-ink/75">
               Von den Snacks und Getränken über Tampons bis hin zum Deo auf der
               Toilette – im Clitze Clein ist alles vegan. Zusätzlich sind fast alle
@@ -106,7 +106,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="eyebrow">Über mich</p>
-            <h2 className="h-1 mt-4 text-cream">Hi, ich bin Chiara</h2>
+            <h2 className="t-h1 mt-4 text-cream">Hi, ich bin Chiara</h2>
             <p className="prose-body mt-5 text-cream/80">
               Seit 2019 bin ich Tätowiererin. Mit meiner lockeren Art gebe ich mein
               Bestes, falls du dich unwohl fühlst oder Angst hast – wir rocken das
@@ -128,7 +128,7 @@ export default function Home() {
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Galerie</p>
-            <h2 className="h-1 mt-4">Tattoos, Gemälde &amp; das Atelier</h2>
+            <h2 className="t-h1 mt-4">Tattoos, Gemälde &amp; das Atelier</h2>
             <p className="prose-body mx-auto mt-5 text-ink/70">
               Ein clitze cleiner Einblick in meine Arbeit – von feinen Linien bis zu
               selbstgemalten Bildern an der Studiowand.
@@ -148,7 +148,7 @@ export default function Home() {
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Stimmen</p>
-            <h2 className="h-1 mt-4">5,0 Sterne – mit Herz und Können</h2>
+            <h2 className="t-h1 mt-4">5,0 Sterne – mit Herz und Können</h2>
           </Reveal>
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {reviews.map((r) => (
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="container-x">
           <Reveal className="card paper relative overflow-hidden p-10 text-center md:p-16">
             <p className="eyebrow">Powered by PayPal</p>
-            <h2 className="h-1 mt-4">Dein Tattoo auf Raten</h2>
+            <h2 className="t-h1 mt-4">Dein Tattoo auf Raten</h2>
             <p className="prose-body mx-auto mt-5 text-ink/70">
               Tattoos sind schweine teuer – darüber müssen wir nicht diskutieren.
               Fehlt das nötige Kleingeld fürs Coverup oder die Verewigung deines
@@ -188,7 +188,7 @@ export default function Home() {
       <section className="section-y bg-oxblood text-cream paper relative overflow-hidden">
         <div className="container-x relative text-center">
           <Reveal>
-            <h2 className="h-1 text-cream">Bereit für dein Tattoo?</h2>
+            <h2 className="t-h1 text-cream">Bereit für dein Tattoo?</h2>
             <p className="prose-body mx-auto mt-5 text-cream/80">
               Schick mir deine Idee – ich freu mich auf dich. Telefonisch erreichbar
               Dienstag bis Freitag von 10:00 bis 16:00 Uhr.

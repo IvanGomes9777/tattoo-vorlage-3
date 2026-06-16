@@ -42,7 +42,7 @@ export default function StudioPage() {
             </div>
           </Reveal>
           <Reveal delay={0.12}>
-            <h2 className="h-2">Vegan ist hier keine Ausnahme, sondern Standard</h2>
+            <h2 className="t-h2">Vegan ist hier keine Ausnahme, sondern Standard</h2>
             <p className="prose-body mt-5 text-ink/75">
               Tattoo-Zubehör wie Farben, Blaupapier und Stifte ist meist schon von
               sich aus vegan. Aber nachhaltig? Oder alles, was über das Equipment
@@ -94,7 +94,7 @@ export default function StudioPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="eyebrow">Über mich</p>
-            <h2 className="h-2 mt-4">Chiara</h2>
+            <h2 className="t-h2 mt-4">Chiara</h2>
             <p className="prose-body mt-5 text-ink/75">
               Hi! Ich bin Chiara und seit 2019 Tätowiererin. Mit meiner lockeren Art
               werde ich mein Bestes geben, falls ihr euch unwohl fühlt, Angst habt
@@ -124,7 +124,7 @@ function FaqSection() {
       <div className="container-x relative">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">Häufige Fragen</p>
-          <h2 className="h-2 mt-4 text-cream">Gut zu wissen</h2>
+          <h2 className="t-h2 mt-4 text-cream">Gut zu wissen</h2>
         </Reveal>
         <div className="mx-auto mt-12 max-w-3xl space-y-3">
           {faqs.map((f) => (

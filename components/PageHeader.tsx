@@ -36,7 +36,7 @@ export default function PageHeader({
         )}
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
-          <h1 className="h-1 mt-4 max-w-3xl">{title}</h1>
+          <h1 className="t-h1 mt-4 max-w-3xl">{title}</h1>
           {intro && <p className="lead mt-5 text-ink/70">{intro}</p>}
         </Reveal>
       </div>

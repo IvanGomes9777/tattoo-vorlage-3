@@ -31,7 +31,7 @@ export default function KontaktPage() {
         <div className="container-x grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <div className="card p-7 sm:p-9">
-              <h2 className="h-2 mb-6">Anfrage senden</h2>
+              <h2 className="t-h2 mb-6">Anfrage senden</h2>
               <ContactForm />
             </div>
           </Reveal>

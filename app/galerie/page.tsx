@@ -33,7 +33,7 @@ export default function GaleriePage() {
       <section className="section-y bg-cream-2/60">
         <div className="container-x text-center">
           <Reveal>
-            <h2 className="h-2">Dein Motiv ist noch nicht dabei?</h2>
+            <h2 className="t-h2">Dein Motiv ist noch nicht dabei?</h2>
             <p className="prose-body mx-auto mt-5 text-ink/70">
               Bring deine eigene Idee mit – wir verfeinern sie gemeinsam zu etwas,
               das wirklich zu dir gehört.

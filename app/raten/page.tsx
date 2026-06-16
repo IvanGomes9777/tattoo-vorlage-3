@@ -41,7 +41,7 @@ export default function RatenPage() {
       <section className="section-y">
         <div className="container-x grid items-start gap-12 lg:grid-cols-2">
           <Reveal>
-            <h2 className="h-2">So einfach geht&rsquo;s</h2>
+            <h2 className="t-h2">So einfach geht&rsquo;s</h2>
             <p className="prose-body mt-5 text-ink/75">
               Dafür brauchst du nur eins: PayPal. Du buchst deinen Wunschbetrag und
               zahlst ihn bequem über den PayPal-Ratenkauf ab.
@@ -94,7 +94,7 @@ export default function RatenPage() {
       <section className="section-y bg-oxblood text-cream paper relative overflow-hidden">
         <div className="container-x relative text-center">
           <Reveal>
-            <h2 className="h-2 text-cream">Fragen zur Ratenzahlung?</h2>
+            <h2 className="t-h2 text-cream">Fragen zur Ratenzahlung?</h2>
             <p className="prose-body mx-auto mt-5 text-cream/80">
               Melde dich einfach – wir finden gemeinsam die passende Lösung für dein
               Wunsch-Tattoo.
