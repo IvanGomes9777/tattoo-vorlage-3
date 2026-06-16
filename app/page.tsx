@@ -93,9 +93,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- CHIARA TEASER ---------- */}
-      <section className="section-y bg-oxblood-deep text-cream paper relative overflow-hidden">
-        <div className="container-x relative grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
+      {/* ---------- CHIARA (Sektion 5 – Option 2: Hell & freundlich) ---------- */}
+      <section className="section-y">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
             <div className="overflow-hidden rounded-[2rem] shadow-card">
               <Image
@@ -109,17 +109,17 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="eyebrow">Über mich</p>
-            <h2 className="t-h1 mt-4 text-cream">Hi, ich bin Chiara</h2>
-            <p className="prose-body mt-5 text-cream/80">
+            <h2 className="t-h1 mt-4">Hi, ich bin Chiara</h2>
+            <p className="prose-body mt-5 text-ink/75">
               Seit 2019 bin ich Tätowiererin. Mit meiner lockeren Art gebe ich mein
               Bestes, falls du dich unwohl fühlst oder Angst hast – wir rocken das
               gemeinsam. Und wenn ich richtig gute Laune habe, darfst du sogar
               aussuchen, was für Musik gerade läuft.
             </p>
-            <p className="prose-body mt-4 text-cream/80">
+            <p className="prose-body mt-4 text-ink/75">
               Lets go – mach dir dein eigenes Bild von mir.
             </p>
-            <Link href="/studio#chiara" className="btn mt-8 bg-cream text-oxblood hover:bg-white">
+            <Link href="/studio#chiara" className="btn btn-ghost mt-8">
               Lern mich kennen
             </Link>
           </Reveal>
