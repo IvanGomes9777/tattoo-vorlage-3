@@ -33,7 +33,6 @@ export default function HeroVideo() {
             ref={videoRef}
             className={`h-full w-full object-cover transition-opacity duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
             src="/hero-loop.mp4"
-            poster="/galerie-clitzeclein.jpg"
             autoPlay
             muted
             loop
@@ -43,13 +42,8 @@ export default function HeroVideo() {
             onCanPlay={() => setReady(true)}
           />
         )}
-        {/* Poster fallback layer (and for reduced motion) */}
-        <div
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-            ready && !reduce ? "opacity-0" : "opacity-100"
-          }`}
-          style={{ backgroundImage: "url(/galerie-clitzeclein.jpg)" }}
-        />
+        {/* Dark fallback layer (first paint + reduced motion) – matches the dark ink video */}
+        <div className="absolute inset-0 bg-oxblood-deep" />
         {/* Legibility overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-oxblood-deep/88 via-oxblood-deep/55 to-oxblood-deep/15" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-cream" />
