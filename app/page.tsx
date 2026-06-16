@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import HeroVideo from "@/components/HeroVideo";
 import CarouselGallery from "@/components/CarouselGallery";
+import RatenTeaser from "@/components/RatenTeaser";
 import { iconFor, StarIcon } from "@/components/Icons";
 import { JsonLd, faqSchema } from "@/lib/schema";
 import { values, reviews, faqs } from "@/lib/content";
@@ -199,21 +200,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- RATEN TEASER ---------- */}
-      <section className="section-y">
-        <div className="container-x">
-          <Reveal className="card paper relative overflow-hidden p-10 text-center md:p-16">
-            <p className="eyebrow">Powered by PayPal</p>
-            <h2 className="t-h1 mt-4">Dein Tattoo auf Raten</h2>
-            <p className="prose-body mx-auto mt-5 text-ink/70">
-              Tattoos sind schweine teuer – darüber müssen wir nicht diskutieren.
-              Fehlt das nötige Kleingeld fürs Coverup oder die Verewigung deines
-              Vierbeiners? Zahl deinen Wunschbetrag bequem in Raten via PayPal.
-            </p>
-            <Link href="/raten" className="btn btn-primary mt-8">So funktioniert&rsquo;s</Link>
-          </Reveal>
-        </div>
-      </section>
+      {/* ---------- RATEN TEASER (Sektion 8 – Mix Option 9 Dialog + Option 6 Rechner) ---------- */}
+      <RatenTeaser />
 
       {/* ---------- FINAL CTA ---------- */}
       <section className="section-y bg-oxblood text-cream paper relative overflow-hidden">
