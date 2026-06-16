@@ -51,41 +51,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- ABOUT ATELIER ---------- */}
-      <section className="section-y">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-2">
-          <Reveal>
-            <div className="relative">
-              <div className="overflow-hidden rounded-[2rem] shadow-card">
-                <Image
-                  src="/galerie-clitzeclein.jpg"
-                  alt="Innenansicht des Clitze Cleine Tattoo Ateliers in Münster mit goldenem Widderkopf und roter Atelier-Tür"
-                  width={2048}
-                  height={1536}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-2 hidden rounded-2xl bg-oxblood px-7 py-5 text-cream shadow-card sm:block">
-                <p className="font-display text-3xl">22 m²</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-cream/70">clitze clein</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.12}>
+      {/* ---------- ABOUT ATELIER (Sektion 4 – Option 3: Text über Bild-Band) ---------- */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/galerie-clitzeclein.jpg"
+            alt="Innenansicht des Clitze Cleine Tattoo Ateliers in Münster mit goldenem Widderkopf und roter Atelier-Tür"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-oxblood-deep/95 via-oxblood-deep/70 to-oxblood-deep/25" />
+        </div>
+        <div className="container-x relative flex min-h-[78svh] items-center py-20">
+          <Reveal className="max-w-xl">
             <p className="eyebrow">Das Atelier</p>
-            <h2 className="t-h1 mt-4">Ein Safespace, in dem alles vegan ist</h2>
-            <p className="prose-body mt-5 text-ink/75">
+            <h2 className="t-h1 mt-4 text-cream">Ein Safespace, in dem alles vegan ist</h2>
+            <p className="prose-body mt-5 text-cream/85">
               Von den Snacks und Getränken über Tampons bis hin zum Deo auf der
               Toilette – im Clitze Clein ist alles vegan. Zusätzlich sind fast alle
               Einweg-Artikel plastikfrei: Nadeln, Rasierer und das Material, mit dem
               das Equipment eingepackt wird, bestehen größtenteils aus Zuckerrohr.
             </p>
-            <p className="prose-body mt-4 text-ink/75">
-              Hier soll dein clitze cleiner Safespace sein. Ich freu mich auf euch –
+            <p className="prose-body mt-4 text-cream/85">
+              Hier soll dein clitze cleiner Safespace sein – ich freu mich auf euch,
               auf alle. Denn: everybody&rsquo;s welcome.
             </p>
-            <Link href="/studio" className="btn btn-ghost mt-8">Mehr über das Atelier</Link>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="/studio"
+                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
+              >
+                Mehr über das Atelier
+              </Link>
+              <span className="inline-flex items-baseline gap-2 text-cream">
+                <span className="font-display text-3xl text-gold">22 m²</span>
+                <span className="text-xs uppercase tracking-[0.2em] text-cream/70">clitze clein</span>
+              </span>
+            </div>
           </Reveal>
         </div>
       </section>
