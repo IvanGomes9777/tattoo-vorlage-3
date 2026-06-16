@@ -3,11 +3,11 @@ import { studio } from "@/lib/studio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = ["", "/studio", "/galerie", "/raten", "/kontakt", "/impressum", "/datenschutz", "/agb"];
+  const routes = ["", "/raten", "/impressum", "/datenschutz", "/agb"];
   return routes.map((path) => ({
     url: `${studio.url}${path}`,
     lastModified: now,
     changeFrequency: path === "" ? "monthly" : "yearly",
-    priority: path === "" ? 1 : path === "/kontakt" ? 0.9 : 0.7,
+    priority: path === "" ? 1 : path === "/raten" ? 0.8 : 0.5,
   }));
 }

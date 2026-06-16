@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { studio } from "@/lib/studio";
 
@@ -12,7 +11,7 @@ const OSM =
  */
 export default function FinalCta() {
   return (
-    <section className="relative overflow-hidden">
+    <section id="kontakt" className="relative scroll-mt-24 overflow-hidden">
       <div className="grid lg:grid-cols-2">
         {/* Persönliche Einladung */}
         <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-16 text-cream sm:px-12">
@@ -37,12 +36,14 @@ export default function FinalCta() {
                 </div>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <Link
-                    href="/kontakt"
+                  <a
+                    href={`https://wa.me/${studio.phoneRaw.replace("+", "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
                   >
-                    🌱 Termin anfragen
-                  </Link>
+                    🌱 Termin per WhatsApp
+                  </a>
                   <a
                     href={`tel:${studio.phoneRaw}`}
                     className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-6 py-3 text-sm font-medium text-cream transition-colors hover:bg-cream hover:text-oxblood"

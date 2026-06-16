@@ -39,11 +39,10 @@ export default function Footer() {
         <nav aria-label="Seiten">
           <h3 className="font-display text-lg text-cream">Atelier</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
-            <li><Link href="/studio" className="transition-colors hover:text-gold">Über das Atelier</Link></li>
-            <li><Link href="/studio#chiara" className="transition-colors hover:text-gold">Über Chiara</Link></li>
-            <li><Link href="/galerie" className="transition-colors hover:text-gold">Galerie</Link></li>
+            <li><Link href="/#atelier" className="transition-colors hover:text-gold">Über das Atelier</Link></li>
+            <li><Link href="/#galerie" className="transition-colors hover:text-gold">Galerie</Link></li>
             <li><Link href="/raten" className="transition-colors hover:text-gold">Tattoo auf Raten</Link></li>
-            <li><Link href="/kontakt" className="transition-colors hover:text-gold">Termin &amp; Kontakt</Link></li>
+            <li><Link href="/#kontakt" className="transition-colors hover:text-gold">Termin &amp; Kontakt</Link></li>
           </ul>
         </nav>
 

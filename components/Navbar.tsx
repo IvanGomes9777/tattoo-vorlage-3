@@ -8,11 +8,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/public/clintzecleintattoo.png";
 
 const links = [
-  { href: "/", label: "Start" },
-  { href: "/studio", label: "Atelier" },
-  { href: "/galerie", label: "Galerie" },
+  { href: "/#top", label: "Start" },
+  { href: "/#atelier", label: "Atelier" },
+  { href: "/#galerie", label: "Galerie" },
   { href: "/raten", label: "Ratenzahlung" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 /**
@@ -82,7 +82,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <Link
-              href="/kontakt"
+              href="/#kontakt"
               className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-oxblood to-oxblood-soft px-4 py-2.5 text-sm font-semibold text-cream shadow-[0_8px_20px_-8px_rgba(74,18,18,0.6)] transition-transform hover:scale-105 active:scale-95 sm:inline-flex"
             >
               <span aria-hidden>🌱</span> Termin anfragen
@@ -122,6 +122,7 @@ export default function Navbar() {
                     <li key={l.href}>
                       <Link
                         href={l.href}
+                        onClick={() => setOpen(false)}
                         aria-current={active ? "page" : undefined}
                         className={`block rounded-2xl px-4 py-3 text-base font-medium transition-colors ${
                           active ? "bg-cream-2 text-oxblood" : "text-ink/80 hover:bg-cream-2 hover:text-oxblood"
@@ -134,7 +135,8 @@ export default function Navbar() {
                 })}
                 <li className="mt-1">
                   <Link
-                    href="/kontakt"
+                    href="/#kontakt"
+                    onClick={() => setOpen(false)}
                     className="flex items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-r from-oxblood to-oxblood-soft px-4 py-3 text-base font-semibold text-cream"
                   >
                     <span aria-hidden>🌱</span> Termin anfragen

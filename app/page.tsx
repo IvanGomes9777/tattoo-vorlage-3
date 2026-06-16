@@ -21,6 +21,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqSchema(faqs)} />
+      <span id="top" className="absolute top-0" aria-hidden />
 
       {/* ---------- HERO (Video, Sektion 2 – Option 2) ---------- */}
       <HeroVideo />
@@ -54,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* ---------- ABOUT ATELIER (Sektion 4 – Option 3: Text über Bild-Band) ---------- */}
-      <section className="relative overflow-hidden">
+      <section id="atelier" className="relative scroll-mt-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/galerie-clitzeclein.jpg"
@@ -81,10 +82,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-                href="/studio"
+                href="/#kontakt"
                 className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
               >
-                Mehr über das Atelier
+                🌱 Termin anfragen
               </Link>
               <span className="inline-flex items-baseline gap-2 text-cream">
                 <span className="font-display text-3xl text-gold">22 m²</span>
@@ -121,15 +122,15 @@ export default function Home() {
             <p className="prose-body mt-4 text-ink/75">
               Lets go – mach dir dein eigenes Bild von mir.
             </p>
-            <Link href="/studio#chiara" className="btn btn-ghost mt-8">
-              Lern mich kennen
+            <Link href="/#galerie" className="btn btn-ghost mt-8">
+              Meine Arbeiten ansehen
             </Link>
           </Reveal>
         </div>
       </section>
 
       {/* ---------- GALLERY PREVIEW ---------- */}
-      <section className="section-y">
+      <section id="galerie" className="section-y scroll-mt-24">
         <div className="container-x">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Galerie</p>
@@ -143,7 +144,7 @@ export default function Home() {
             <CarouselGallery />
           </div>
           <Reveal className="mt-12 text-center">
-            <Link href="/galerie" className="btn btn-primary">Ganze Galerie ansehen</Link>
+            <a href={studio.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Mehr auf Instagram</a>
           </Reveal>
         </div>
       </section>
