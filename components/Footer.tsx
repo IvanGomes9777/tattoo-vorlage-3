@@ -5,7 +5,7 @@ import { studio } from "@/lib/studio";
 export default function Footer() {
   return (
     <footer className="relative mt-auto overflow-hidden bg-oxblood-deep text-cream/80 paper">
-      <div className="container-x relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-x relative grid gap-12 py-16 md:grid-cols-[1.6fr_0.9fr_1.1fr]">
         <div>
           <LogoEmblem className="w-48 text-cream" />
           <p className="prose-body mt-5 max-w-sm text-cream/70">
@@ -55,6 +55,11 @@ export default function Footer() {
               <a href={`tel:${studio.phoneRaw}`} className="transition-colors hover:text-gold">{studio.phone}</a>
             </p>
             <p className="text-cream/60">Di–Fr · 10:00–16:00 Uhr<br />Termine nach Vereinbarung</p>
+            <p>
+              <a href={studio.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold">
+                Instagram: {studio.instagramHandle}
+              </a>
+            </p>
           </address>
         </div>
       </div>
