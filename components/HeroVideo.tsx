@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { StarIcon } from "./Icons";
 import { studio } from "@/lib/studio";
@@ -9,29 +9,34 @@ import { studio } from "@/lib/studio";
 /**
  * Sektion 2 – Hero (Option 2: "Full-Bleed Cinematic")
  * Loop-Video (Higsfield AI) als Full-Bleed-Hintergrund, dunkler Verlauf links
- * für Lesbarkeit. Respektiert prefers-reduced-motion (zeigt dann nur das Poster).
+ * für Lesbarkeit. Respektiert prefers-reduced-motion (zeigt dann ein Standbild).
  */
 export default function HeroVideo() {
   const reduce = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v || reduce) return;
     v.play().catch(() => {
-      /* autoplay blocked → poster stays */
+      /* autoplay blocked → erstes Frame bleibt sichtbar */
     });
   }, [reduce]);
 
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-      {/* Background video */}
-      <div className="absolute inset-0 -z-10">
-        {!reduce && (
+      {/* Background layer: dark base → video on top → gradients on top */}
+      <div className="absolute inset-0 -z-10 bg-oxblood-deep">
+        {reduce ? (
+          // Reduced motion: statisches Studio-Bild statt Video
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url(/galerie-clitzeclein.jpg)" }}
+          />
+        ) : (
           <video
             ref={videoRef}
-            className={`h-full w-full object-cover transition-opacity duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
+            className="absolute inset-0 h-full w-full object-cover"
             src="/hero-loop.mp4"
             autoPlay
             muted
@@ -39,13 +44,10 @@ export default function HeroVideo() {
             playsInline
             preload="auto"
             aria-hidden="true"
-            onCanPlay={() => setReady(true)}
           />
         )}
-        {/* Dark fallback layer (first paint + reduced motion) – matches the dark ink video */}
-        <div className="absolute inset-0 bg-oxblood-deep" />
-        {/* Legibility overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-oxblood-deep/88 via-oxblood-deep/55 to-oxblood-deep/15" />
+        {/* Legibility overlays (über dem Video) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-oxblood-deep/85 via-oxblood-deep/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-cream" />
       </div>
 

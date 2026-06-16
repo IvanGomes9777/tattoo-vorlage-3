@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://images.unsplash.com https://*.tile.openstreetmap.org",
       "font-src 'self' data:",
+      "media-src 'self' blob:",
       "frame-src https://www.openstreetmap.org https://www.paypal.com",
       "connect-src 'self'",
       "base-uri 'self'",
