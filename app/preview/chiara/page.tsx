@@ -132,8 +132,8 @@ export default function ChiaraPreview() {
     { title: "Dark Editorial", vibe: "edel, Porträt links, Cream-Text auf Dunkel", anim: "Porträt clip-revealt rein, Text staggert. Goldener CTA mit Scale-Bounce. (Aktuell auf der Seite.)", el: <C1 /> },
     { title: "Hell & freundlich", vibe: "warm, einladend, dunkle Schrift auf Beige", anim: "Helle Variante – passt zur Beige/Gold-Linie, wirkt nahbar. Sanftes Fade-in, Ghost-CTA füllt sich beim Hover.", el: <C2 /> },
     { title: "Porträt + Namenskarte", vibe: "magazinig, modern", anim: "Breites Porträt, darüber schiebt sich eine Beige-Karte mit Name & Text – schöner Tiefeneffekt.", el: <C3 /> },
-    { title: "Zitat-fokussiert", vibe: "emotional, persönlich", anim: "Großes Pull-Quote („wir rocken das gemeinsam") mit rundem Porträt + Signatur. Sehr menschlich.", el: <C4 /> },
-    { title: "Split + „seit 2019\"", vibe: "klar, vertrauensstark", anim: "Halb Porträt / halb Text, goldenes „seit 2019\"-Badge auf dem Bild. Badge poppt rein.", el: <C5 /> },
+    { title: "Zitat-fokussiert", vibe: "emotional, persönlich", anim: "Großes Pull-Quote (wir rocken das gemeinsam) mit rundem Porträt + Signatur. Sehr menschlich.", el: <C4 /> },
+    { title: "Split + seit 2019", vibe: "klar, vertrauensstark", anim: "Halb Porträt / halb Text, goldenes seit-2019-Badge auf dem Bild. Badge poppt rein.", el: <C5 /> },
   ];
   return (
     <main className="min-h-screen bg-cream pb-24 pt-28">
