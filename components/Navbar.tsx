@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/public/clintzecleintattoo.png";
+import { studio } from "@/lib/studio";
 
 const links = [
   { href: "/#top", label: "Start" },
@@ -42,6 +43,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
+    <>
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container-x pt-3 sm:pt-4">
         <motion.nav
@@ -81,6 +83,15 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
+            <a
+              href={`tel:${studio.phoneRaw}`}
+              aria-label="Anrufen"
+              className="hidden h-11 w-11 place-items-center rounded-full border border-oxblood/15 text-oxblood transition-colors hover:border-gold hover:bg-cream-2 md:grid"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden>
+                <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1Z" />
+              </svg>
+            </a>
             <Link
               href="/#kontakt"
               className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-oxblood to-oxblood-soft px-4 py-2.5 text-sm font-semibold text-cream shadow-[0_8px_20px_-8px_rgba(74,18,18,0.6)] transition-transform hover:scale-105 active:scale-95 sm:inline-flex"
@@ -148,5 +159,17 @@ export default function Navbar() {
         </AnimatePresence>
       </div>
     </header>
+
+    {/* Schwebender Telefon-Button (nur Mobil), unten links */}
+    <a
+      href={`tel:${studio.phoneRaw}`}
+      aria-label="Anrufen"
+      className="fixed bottom-5 left-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-oxblood text-cream shadow-[0_12px_30px_-8px_rgba(74,18,18,0.7)] transition-transform hover:scale-105 active:scale-95 md:hidden"
+    >
+      <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+        <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1Z" />
+      </svg>
+    </a>
+    </>
   );
 }
