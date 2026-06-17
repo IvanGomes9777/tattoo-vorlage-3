@@ -84,7 +84,7 @@ export default function FinalCta() {
       </div>
 
       {/* Karte über volle Breite */}
-      <div className="relative h-[360px] w-full sm:h-[420px]">
+      <Reveal as="div" className="relative h-[360px] w-full sm:h-[420px]">
         <iframe
           title="Karte: Clitze Clein, Hammer Str. 174, Münster"
           src={OSM}
@@ -100,7 +100,7 @@ export default function FinalCta() {
         >
           Routenplaner öffnen →
         </a>
-      </div>
+      </Reveal>
     </section>
   );
 }

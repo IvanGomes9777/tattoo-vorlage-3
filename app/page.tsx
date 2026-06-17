@@ -140,9 +140,9 @@ export default function Home() {
               selbstgemalten Bildern an der Studiowand.
             </p>
           </Reveal>
-          <div className="mt-12">
+          <Reveal className="mt-12">
             <CarouselGallery />
-          </div>
+          </Reveal>
           <Reveal className="mt-12 text-center">
             <a href={studio.instagram} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Mehr auf Instagram</a>
           </Reveal>
