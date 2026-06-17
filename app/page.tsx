@@ -186,9 +186,8 @@ export default function Home() {
                   <p className="rounded-xl bg-cream/10 px-3 py-2">Google <strong className="text-gold">5,0</strong> · 31 Rezensionen</p>
                   <p className="rounded-xl bg-cream/10 px-3 py-2">Infobel <strong className="text-gold">5,0</strong> · 30 Rezensionen</p>
                 </div>
-                {/* TODO: durch echten Google-Rezensions-Link ersetzen */}
                 <a
-                  href={studio.maps}
+                  href={studio.googleReview}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
