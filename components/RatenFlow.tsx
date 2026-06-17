@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { studio } from "@/lib/studio";
+import PayPalCheckout from "@/components/PayPalCheckout";
 
 const MIN = 99;
 const MAX = 5000;
@@ -26,7 +27,8 @@ export default function RatenFlow() {
   const [recap, setRecap] = useState<Recap | null>(null);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [payload, setPayload] = useState<Record<string, string>>({});
-  const [sending, setSending] = useState(false);
+  const [payErr, setPayErr] = useState<string | null>(null);
+  const [payResult, setPayResult] = useState<"paid" | "pending" | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   const go = (n: number) => {
@@ -62,19 +64,17 @@ export default function RatenFlow() {
     go(3);
   };
 
-  const submit = async () => {
-    setSending(true);
+  /** Schickt die Kunden-/Motivdaten ans Studio (nach erfolgreicher PayPal-Zahlung). */
+  const sendLead = async (extra: Record<string, string>) => {
     try {
       await fetch("/api/raten", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, ...extra }),
       });
     } catch {
-      /* Anfrage wird trotzdem als eingegangen angezeigt; Studio prüft */
+      /* Anfrage gilt trotzdem als eingegangen; Studio prüft */
     }
-    setSending(false);
-    go(4);
   };
 
   const reset = () => {
@@ -84,6 +84,8 @@ export default function RatenFlow() {
     setTerm(6);
     setErrors({});
     setRecap(null);
+    setPayErr(null);
+    setPayResult(null);
     go(0);
   };
 
@@ -321,14 +323,44 @@ export default function RatenFlow() {
           <div className="card mt-4 p-6">
             <h3 className="font-display text-base font-semibold text-oxblood">Bezahlen</h3>
             <p className="mt-1 text-sm text-ink/70">
-              Im Live-Betrieb öffnet sich hier das PayPal-Fenster. <b>„Später bezahlen / Ratenzahlung"</b> blendet PayPal automatisch ein, sofern dein Konto die Voraussetzungen erfüllt und der Betrag zwischen 99 € und 5.000 € liegt.
+              Wähle im PayPal-Fenster <b>„Später bezahlen / Ratenzahlung"</b>, um in monatlichen Raten zu zahlen. Die Option erscheint, sofern dein Konto die Voraussetzungen erfüllt und der Betrag zwischen 99 € und 5.000 € liegt.
             </p>
-            <button onClick={submit} disabled={sending} className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#FFC439] py-3.5 text-sm font-semibold text-[#0a0a0a] transition-[filter] hover:brightness-105 active:scale-[0.99] disabled:opacity-60">
-              <span><span className="text-[#003087]">Pay</span><span className="text-[#009cde]">Pal</span></span> · {sending ? "Wird gesendet …" : "Direkt bezahlen"}
-            </button>
-            <button onClick={submit} disabled={sending} className="mt-2.5 flex w-full items-center justify-center gap-2 rounded-full bg-black py-3.5 text-sm font-semibold text-white transition-[filter] hover:brightness-125 active:scale-[0.99] disabled:opacity-60">
-              Später bezahlen — in Raten mit <span className="font-bold">PayPal</span>
-            </button>
+
+            <div className="mt-4">
+              <PayPalCheckout
+                amount={amount}
+                onSuccess={async ({ orderID }) => {
+                  setPayErr(null);
+                  setPayResult("paid");
+                  await sendLead({
+                    amount: String(amount),
+                    term: String(term),
+                    paypalOrderId: orderID,
+                    status: "bezahlt",
+                  });
+                  go(4);
+                }}
+                onPending={async (orderID) => {
+                  setPayErr(null);
+                  setPayResult("pending");
+                  await sendLead({
+                    amount: String(amount),
+                    term: String(term),
+                    paypalOrderId: orderID,
+                    status: "in Pruefung (Pay Later)",
+                  });
+                  go(4);
+                }}
+                onErrorMsg={(msg) => setPayErr(msg)}
+              />
+            </div>
+
+            {payErr && (
+              <p className="mt-3 rounded-xl border border-[#a8331f]/30 bg-[#a8331f]/[0.06] p-3 text-sm text-[#9a3520]">
+                {payErr}
+              </p>
+            )}
+
             <p className="mt-3.5 flex items-start gap-2 text-[0.72rem] leading-snug text-ink/45">
               <span aria-hidden>ⓘ</span>
               Ob die Ratenoption erscheint, entscheidet allein PayPal (Bonität, Kontostatus, Betrag). Das Studio erhält den vollen Betrag sofort, PayPal trägt das Ausfallrisiko.
@@ -343,9 +375,13 @@ export default function RatenFlow() {
       {step === 4 && (
         <section className="animate-[fadeUp_.5s_ease] py-8 text-center">
           <div className="mx-auto grid h-[74px] w-[74px] place-items-center rounded-full bg-gold text-3xl text-oxblood-deep">✓</div>
-          <h2 className="t-h2 mt-6">Buchung eingegangen</h2>
+          <h2 className="t-h2 mt-6">{payResult === "pending" ? "Fast geschafft" : "Zahlung erfolgreich"}</h2>
           <p className="mx-auto mt-3 max-w-md text-ink/75">
-            Stark! Deine Anfrage über <b className="text-oxblood">{fmtInt(amount)}</b> ist bei Chiara gelandet. Sobald die PayPal-Finanzierung bestätigt ist, meldet sich das <b>Clitze Clein</b> bei dir zur Terminabstimmung.
+            {payResult === "pending" ? (
+              <>Deine Ratenzahlung über <b className="text-oxblood">{fmtInt(amount)}</b> wird von PayPal noch geprüft. Sobald PayPal bestätigt, meldet sich das <b>Clitze Clein</b> bei dir zur Terminabstimmung.</>
+            ) : (
+              <>Stark! Deine Zahlung über <b className="text-oxblood">{fmtInt(amount)}</b> ist eingegangen. Das <b>Clitze Clein</b> meldet sich bei dir zur Terminabstimmung.</>
+            )}
           </p>
           <p className="mt-3 text-sm text-ink/45">Bestätigung &amp; Briefing gehen an deine E-Mail.</p>
           <button onClick={reset} className="btn btn-primary mx-auto mt-7">Von vorn beginnen</button>
