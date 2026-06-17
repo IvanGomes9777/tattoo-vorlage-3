@@ -44,7 +44,7 @@ export default function Navbar() {
 
   return (
     <>
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 2xl:fixed">
       <div className="container-x pt-3 sm:pt-4">
         <motion.nav
           initial={{ y: -24, opacity: 0 }}
@@ -60,8 +60,8 @@ export default function Navbar() {
             <Image src={logo} alt="Clitze Clein – Tattoo Atelier" priority className="h-9 w-auto sm:h-10" />
           </Link>
 
-          {/* Desktop links */}
-          <ul className="hidden items-center gap-1 md:flex">
+          {/* Nav-Links nur auf großen Displays (≈20 Zoll, ≥1536px) */}
+          <ul className="hidden items-center gap-1 2xl:flex">
             {links.map((l) => {
               const active = pathname === l.href;
               return (
@@ -86,7 +86,7 @@ export default function Navbar() {
             <a
               href={`tel:${studio.phoneRaw}`}
               aria-label="Anrufen"
-              className="hidden h-11 w-11 place-items-center rounded-full border border-oxblood/15 text-oxblood transition-colors hover:border-gold hover:bg-cream-2 md:grid"
+              className="grid h-11 w-11 place-items-center rounded-full border border-oxblood/15 text-oxblood transition-colors hover:border-gold hover:bg-cream-2"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden>
                 <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.25 1Z" />
@@ -94,9 +94,9 @@ export default function Navbar() {
             </a>
             <Link
               href="/#kontakt"
-              className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-oxblood to-oxblood-soft px-4 py-2.5 text-sm font-semibold text-cream shadow-[0_8px_20px_-8px_rgba(74,18,18,0.6)] transition-transform hover:scale-105 active:scale-95 sm:inline-flex"
+              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-oxblood to-oxblood-soft px-3.5 py-2.5 text-sm font-semibold text-cream shadow-[0_8px_20px_-8px_rgba(74,18,18,0.6)] transition-transform hover:scale-105 active:scale-95"
             >
-              <span aria-hidden>🌱</span> Termin anfragen
+              <span aria-hidden>🌱</span> Termin<span className="hidden sm:inline">&nbsp;anfragen</span>
             </Link>
 
             {/* Burger */}
