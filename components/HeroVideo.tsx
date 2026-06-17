@@ -24,7 +24,7 @@ export default function HeroVideo() {
   }, [reduce]);
 
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+    <section data-hero className="relative flex min-h-[100svh] items-center overflow-hidden">
       {/* Background layer: dark base → video on top → gradients on top */}
       <div className="absolute inset-0 -z-10 bg-oxblood-deep">
         {/* Immer sichtbare Foto-Basis (Fallback + reduced motion + Autoplay blockiert) */}
