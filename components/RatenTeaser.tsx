@@ -30,14 +30,16 @@ export default function RatenTeaser() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Links: Heading + Chat */}
           <div>
-            <Reveal>
-              <p className="eyebrow">Powered by PayPal</p>
-              <h2 className="t-h1 mt-4">Dein Tattoo auf Raten</h2>
-              <p className="prose-body mt-4 text-ink/75">
-                Tattoos sind schweine teuer – da brauchen wir nicht drüber zu
-                diskutieren. Zahl deinen Wunschbetrag einfach in Raten via PayPal.
-              </p>
-            </Reveal>
+            <Stagger>
+              <StaggerItem><p className="eyebrow">Powered by PayPal</p></StaggerItem>
+              <StaggerItem><h2 className="t-h1 mt-4">Dein Tattoo auf Raten</h2></StaggerItem>
+              <StaggerItem>
+                <p className="prose-body mt-4 text-ink/75">
+                  Tattoos sind schweine teuer – da brauchen wir nicht drüber zu
+                  diskutieren. Zahl deinen Wunschbetrag einfach in Raten via PayPal.
+                </p>
+              </StaggerItem>
+            </Stagger>
 
             <Stagger className="mt-7 flex flex-col gap-2.5">
               {bubbles.map((b, i) => (

@@ -29,14 +29,16 @@ export default function Home() {
       {/* ---------- VALUES (Sektion 3) ---------- */}
       <section className="section-y bg-cream-2/60">
         <div className="container-x">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Warum Clitze Clein</p>
-            <h2 className="t-h1 mt-4">Die kleinste Dekadenz in Münster</h2>
-            <p className="prose-body mx-auto mt-5 text-ink/70">
-              Tattoo-Zubehör ist oft schon vegan – aber nachhaltig? Oder alles, was
-              über das Equipment hinausgeht? Fehlanzeige. Außer im Clitze Clein.
-            </p>
-          </Reveal>
+          <Stagger className="mx-auto max-w-2xl text-center">
+            <StaggerItem><p className="eyebrow">Warum Clitze Clein</p></StaggerItem>
+            <StaggerItem><h2 className="t-h1 mt-4">Die kleinste Dekadenz in Münster</h2></StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mx-auto mt-5 text-ink/70">
+                Tattoo-Zubehör ist oft schon vegan – aber nachhaltig? Oder alles, was
+                über das Equipment hinausgeht? Fehlanzeige. Außer im Clitze Clein.
+              </p>
+            </StaggerItem>
+          </Stagger>
 
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
             {values.map((v) => (
@@ -67,32 +69,38 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-oxblood-deep/95 via-oxblood-deep/70 to-oxblood-deep/25" />
         </div>
         <div className="container-x relative flex min-h-[78svh] items-center py-20">
-          <Reveal className="max-w-xl">
-            <p className="eyebrow">Das Atelier</p>
-            <h2 className="t-h1 mt-4 text-cream">Ein Safespace, in dem alles vegan ist</h2>
-            <p className="prose-body mt-5 text-cream/85">
-              Von den Snacks und Getränken über Tampons bis hin zum Deo auf der
-              Toilette – im Clitze Clein ist alles vegan. Zusätzlich sind fast alle
-              Einweg-Artikel plastikfrei: Nadeln, Rasierer und das Material, mit dem
-              das Equipment eingepackt wird, bestehen größtenteils aus Zuckerrohr.
-            </p>
-            <p className="prose-body mt-4 text-cream/85">
-              Hier soll dein clitze cleiner Safespace sein – ich freu mich auf euch,
-              auf alle. Denn: everybody&rsquo;s welcome.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/#kontakt"
-                className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
-              >
-                🌱 Termin anfragen
-              </Link>
-              <span className="inline-flex items-baseline gap-2 text-cream">
-                <span className="font-display text-3xl text-gold">22 m²</span>
-                <span className="text-xs uppercase tracking-[0.2em] text-cream/70">clitze clein</span>
-              </span>
-            </div>
-          </Reveal>
+          <Stagger className="max-w-xl">
+            <StaggerItem><p className="eyebrow">Das Atelier</p></StaggerItem>
+            <StaggerItem><h2 className="t-h1 mt-4 text-cream">Ein Safespace, in dem alles vegan ist</h2></StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mt-5 text-cream/85">
+                Von den Snacks und Getränken über Tampons bis hin zum Deo auf der
+                Toilette – im Clitze Clein ist alles vegan. Zusätzlich sind fast alle
+                Einweg-Artikel plastikfrei: Nadeln, Rasierer und das Material, mit dem
+                das Equipment eingepackt wird, bestehen größtenteils aus Zuckerrohr.
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mt-4 text-cream/85">
+                Hier soll dein clitze cleiner Safespace sein – ich freu mich auf euch,
+                auf alle. Denn: everybody&rsquo;s welcome.
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/#kontakt"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-gold to-gold-soft px-6 py-3 text-sm font-semibold text-oxblood-deep transition-transform hover:scale-105 active:scale-95"
+                >
+                  🌱 Termin anfragen
+                </Link>
+                <span className="inline-flex items-baseline gap-2 text-cream">
+                  <span className="font-display text-3xl text-gold">22 m²</span>
+                  <span className="text-xs uppercase tracking-[0.2em] text-cream/70">clitze clein</span>
+                </span>
+              </div>
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
@@ -110,36 +118,44 @@ export default function Home() {
               />
             </div>
           </Reveal>
-          <Reveal delay={0.12}>
-            <p className="eyebrow">Über mich</p>
-            <h2 className="t-h1 mt-4">Hi, ich bin Chiara</h2>
-            <p className="prose-body mt-5 text-ink/75">
-              Seit 2019 bin ich Tätowiererin. Mit meiner lockeren Art gebe ich mein
-              Bestes, falls du dich unwohl fühlst oder Angst hast – wir rocken das
-              gemeinsam. Und wenn ich richtig gute Laune habe, darfst du sogar
-              aussuchen, was für Musik gerade läuft.
-            </p>
-            <p className="prose-body mt-4 text-ink/75">
-              Lets go – mach dir dein eigenes Bild von mir.
-            </p>
-            <Link href="/#galerie" className="btn btn-ghost mt-8">
-              Meine Arbeiten ansehen
-            </Link>
-          </Reveal>
+          <Stagger>
+            <StaggerItem><p className="eyebrow">Über mich</p></StaggerItem>
+            <StaggerItem><h2 className="t-h1 mt-4">Hi, ich bin Chiara</h2></StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mt-5 text-ink/75">
+                Seit 2019 bin ich Tätowiererin. Mit meiner lockeren Art gebe ich mein
+                Bestes, falls du dich unwohl fühlst oder Angst hast – wir rocken das
+                gemeinsam. Und wenn ich richtig gute Laune habe, darfst du sogar
+                aussuchen, was für Musik gerade läuft.
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mt-4 text-ink/75">
+                Lets go – mach dir dein eigenes Bild von mir.
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <Link href="/#galerie" className="btn btn-ghost mt-8">
+                Meine Arbeiten ansehen
+              </Link>
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
       {/* ---------- GALLERY PREVIEW ---------- */}
       <section id="galerie" className="section-y scroll-mt-24">
         <div className="container-x">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Galerie</p>
-            <h2 className="t-h1 mt-4">Tattoos, Gemälde &amp; das Atelier</h2>
-            <p className="prose-body mx-auto mt-5 text-ink/70">
-              Ein clitze cleiner Einblick in meine Arbeit – von feinen Linien bis zu
-              selbstgemalten Bildern an der Studiowand.
-            </p>
-          </Reveal>
+          <Stagger className="mx-auto max-w-2xl text-center">
+            <StaggerItem><p className="eyebrow">Galerie</p></StaggerItem>
+            <StaggerItem><h2 className="t-h1 mt-4">Tattoos, Gemälde &amp; das Atelier</h2></StaggerItem>
+            <StaggerItem>
+              <p className="prose-body mx-auto mt-5 text-ink/70">
+                Ein clitze cleiner Einblick in meine Arbeit – von feinen Linien bis zu
+                selbstgemalten Bildern an der Studiowand.
+              </p>
+            </StaggerItem>
+          </Stagger>
           <Reveal className="mt-12">
             <CarouselGallery />
           </Reveal>
@@ -152,10 +168,10 @@ export default function Home() {
       {/* ---------- REVIEWS (Sektion 7 – Option 7: Split Panel + Liste) ---------- */}
       <section className="section-y bg-cream-2/60">
         <div className="container-x">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Stimmen</p>
-            <h2 className="t-h1 mt-4">5,0 Sterne – mit Herz und Können</h2>
-          </Reveal>
+          <Stagger className="mx-auto max-w-2xl text-center">
+            <StaggerItem><p className="eyebrow">Stimmen</p></StaggerItem>
+            <StaggerItem><h2 className="t-h1 mt-4">5,0 Sterne – mit Herz und Können</h2></StaggerItem>
+          </Stagger>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             {/* Rating-Panel + Bewerten-Button */}

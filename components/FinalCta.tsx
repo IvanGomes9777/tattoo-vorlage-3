@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Reveal } from "./Reveal";
+import { Reveal, Stagger, StaggerItem } from "./Reveal";
 import ContactForm from "./ContactForm";
 import { studio } from "@/lib/studio";
 
@@ -16,15 +16,16 @@ export default function FinalCta() {
       <div className="grid lg:grid-cols-2">
         {/* Persönliche Einladung */}
         <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-16 text-cream sm:px-12">
-          <Reveal>
-            <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
-              <div>
-                <p className="eyebrow">Everybody&rsquo;s welcome</p>
-                <h2 className="t-h1 mt-3 text-cream">Ich freu mich auf dich!</h2>
+          <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
+            <Stagger>
+              <StaggerItem><p className="eyebrow">Everybody&rsquo;s welcome</p></StaggerItem>
+              <StaggerItem><h2 className="t-h1 mt-3 text-cream">Ich freu mich auf dich!</h2></StaggerItem>
+              <StaggerItem>
                 <p className="prose-body mt-4 text-cream/80">
                   Schick mir deine Idee – wir rocken das gemeinsam. Versprochen.
                 </p>
-
+              </StaggerItem>
+              <StaggerItem>
                 <div className="mt-6 space-y-1.5 text-sm text-cream/80">
                   <p>{studio.street} · {studio.zip} {studio.city}</p>
                   <p>Dienstag–Freitag · 10:00–16:00 Uhr</p>
@@ -34,7 +35,8 @@ export default function FinalCta() {
                     </a>
                   </p>
                 </div>
-
+              </StaggerItem>
+              <StaggerItem>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a
                     href={`https://wa.me/${studio.phoneRaw.replace("+", "")}`}
@@ -51,21 +53,20 @@ export default function FinalCta() {
                     Anrufen
                   </a>
                 </div>
+              </StaggerItem>
+              <StaggerItem><p className="mt-5 text-sm text-cream/55">– Chiara</p></StaggerItem>
+            </Stagger>
 
-                <p className="mt-5 text-sm text-cream/55">– Chiara</p>
-              </div>
-
-              <div className="flex justify-center sm:justify-end">
-                <Image
-                  src="/chiara.jpg"
-                  alt="Chiara, Tätowiererin von Clitze Clein"
-                  width={260}
-                  height={260}
-                  className="h-40 w-40 rounded-full object-cover ring-4 ring-cream/15 sm:h-48 sm:w-48"
-                />
-              </div>
-            </div>
-          </Reveal>
+            <Reveal delay={0.25} className="flex justify-center sm:justify-end">
+              <Image
+                src="/chiara.jpg"
+                alt="Chiara, Tätowiererin von Clitze Clein"
+                width={260}
+                height={260}
+                className="h-40 w-40 rounded-full object-cover ring-4 ring-cream/15 sm:h-48 sm:w-48"
+              />
+            </Reveal>
+          </div>
         </div>
 
         {/* E-Mail-Anfrageformular */}
