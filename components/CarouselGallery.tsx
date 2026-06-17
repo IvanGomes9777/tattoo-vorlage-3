@@ -88,8 +88,8 @@ export default function CarouselGallery() {
                 sizes="(max-width: 768px) 100vw, 56rem"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-oxblood-deep/75 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-5 font-display text-lg text-cream sm:bottom-6 sm:left-7 sm:text-xl">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-oxblood-deep/75 via-transparent to-transparent" />
+              <p className="pointer-events-none absolute bottom-4 left-5 font-display text-lg text-cream sm:bottom-6 sm:left-7 sm:text-xl">
                 {current.caption}
               </p>
             </motion.div>
@@ -99,20 +99,20 @@ export default function CarouselGallery() {
           <button
             onClick={() => go(index - 1)}
             aria-label="Vorheriges Bild"
-            className="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-oxblood backdrop-blur transition-colors hover:bg-cream"
+            className="absolute left-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-oxblood backdrop-blur transition-colors hover:bg-cream"
           >
             ‹
           </button>
           <button
             onClick={() => go(index + 1)}
             aria-label="Nächstes Bild"
-            className="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-oxblood backdrop-blur transition-colors hover:bg-cream"
+            className="absolute right-3 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-oxblood backdrop-blur transition-colors hover:bg-cream"
           >
             ›
           </button>
 
           {/* Punkte */}
-          <div className="absolute bottom-4 right-5 flex gap-1.5 sm:bottom-6 sm:right-7">
+          <div className="absolute bottom-4 right-5 z-10 flex gap-1.5 sm:bottom-6 sm:right-7">
             {items.map((it, i) => (
               <button
                 key={it.src}
