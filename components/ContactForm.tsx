@@ -6,7 +6,7 @@ import { useState } from "react";
 type Status = "idle" | "loading" | "success" | "error";
 
 const fieldClass =
-  "w-full rounded-xl border border-cream-3 bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-gold focus:ring-2 focus:ring-gold/30";
+  "w-full rounded-xl border border-cream-3 bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-gold focus:ring-2 focus:ring-gold/30 lg:py-2.5";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -48,32 +48,32 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-3" noValidate>
       {/* Honeypot – visually hidden, off-screen, ignored by humans */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="website">Website (bitte leer lassen)</label>
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:gap-3">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink/80">Name *</label>
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink/80 lg:mb-1">Name *</label>
           <input id="name" name="name" type="text" required minLength={2} maxLength={100} className={fieldClass} placeholder="Dein Name" />
         </div>
         <div>
-          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink/80">Telefon</label>
+          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink/80 lg:mb-1">Telefon</label>
           <input id="phone" name="phone" type="tel" className={fieldClass} placeholder="Optional" />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink/80">E-Mail *</label>
+        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink/80 lg:mb-1">E-Mail *</label>
         <input id="email" name="email" type="email" required className={fieldClass} placeholder="du@beispiel.de" />
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink/80">Deine Idee *</label>
-        <textarea id="message" name="message" required minLength={5} maxLength={4000} rows={5} className={fieldClass} placeholder="Motiv, Körperstelle, ungefähre Größe – erzähl mir einfach, was du dir vorstellst." />
+        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink/80 lg:mb-1">Deine Idee *</label>
+        <textarea id="message" name="message" required minLength={5} maxLength={4000} rows={4} className={`${fieldClass} resize-none lg:h-[5.5rem]`} placeholder="Motiv, Körperstelle, ungefähre Größe – erzähl mir einfach, was du dir vorstellst." />
       </div>
 
       <label className="flex items-start gap-3 text-sm text-ink/70">

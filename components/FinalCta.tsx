@@ -12,21 +12,21 @@ const OSM =
  */
 export default function FinalCta() {
   return (
-    <section id="kontakt" className="relative scroll-mt-24 overflow-hidden">
-      <div className="grid lg:grid-cols-2">
+    <section id="kontakt" className="relative scroll-mt-24 overflow-hidden lg:flex lg:h-[100svh] lg:min-h-[600px] lg:flex-col">
+      <div className="grid lg:shrink-0 lg:grid-cols-2">
         {/* Persönliche Einladung */}
-        <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-16 text-cream sm:px-12">
-          <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
+        <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-16 text-cream sm:px-12 lg:py-8">
+          <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto] lg:gap-6">
             <Stagger>
               <StaggerItem><p className="eyebrow">Everybody&rsquo;s welcome</p></StaggerItem>
-              <StaggerItem><h2 className="t-h1 mt-3 text-cream">Ich freu mich auf dich!</h2></StaggerItem>
+              <StaggerItem><h2 className="t-h1 mt-3 text-cream lg:mt-2">Ich freu mich auf dich!</h2></StaggerItem>
               <StaggerItem>
-                <p className="prose-body mt-4 text-cream/80">
+                <p className="prose-body mt-4 text-cream/80 lg:mt-2">
                   Schick mir deine Idee – wir rocken das gemeinsam. Versprochen.
                 </p>
               </StaggerItem>
               <StaggerItem>
-                <div className="mt-6 space-y-1.5 text-sm text-cream/80">
+                <div className="mt-6 space-y-1.5 text-sm text-cream/80 lg:mt-4">
                   <p>{studio.street} · {studio.zip} {studio.city}</p>
                   <p>Dienstag–Freitag · 10:00–16:00 Uhr</p>
                   <p>
@@ -37,7 +37,7 @@ export default function FinalCta() {
                 </div>
               </StaggerItem>
               <StaggerItem>
-                <div className="mt-7 flex flex-wrap gap-3">
+                <div className="mt-7 flex flex-wrap gap-3 lg:mt-4">
                   <a
                     href={`https://wa.me/${studio.phoneRaw.replace("+", "")}`}
                     target="_blank"
@@ -54,7 +54,7 @@ export default function FinalCta() {
                   </a>
                 </div>
               </StaggerItem>
-              <StaggerItem><p className="mt-5 text-sm text-cream/55">– Chiara</p></StaggerItem>
+              <StaggerItem><p className="mt-5 text-sm text-cream/55 lg:mt-3">– Chiara</p></StaggerItem>
             </Stagger>
 
             <Reveal delay={0.25} className="flex justify-center sm:justify-end">
@@ -63,21 +63,21 @@ export default function FinalCta() {
                 alt="Chiara, Tätowiererin von Clitze Clein"
                 width={260}
                 height={260}
-                className="h-40 w-40 rounded-full object-cover ring-4 ring-cream/15 sm:h-48 sm:w-48"
+                className="h-40 w-40 rounded-full object-cover ring-4 ring-cream/15 sm:h-48 sm:w-48 lg:h-36 lg:w-36"
               />
             </Reveal>
           </div>
         </div>
 
         {/* E-Mail-Anfrageformular */}
-        <div className="flex flex-col justify-center bg-cream-2/50 px-7 py-16 sm:px-12">
+        <div className="flex flex-col justify-center bg-cream-2/50 px-7 py-16 sm:px-12 lg:py-8">
           <Reveal delay={0.1}>
             <p className="eyebrow">Schreib mir</p>
-            <h2 className="t-h2 mt-3">Anfrage per E-Mail senden</h2>
-            <p className="prose-body mt-3 text-ink/70">
+            <h2 className="t-h2 mt-3 lg:mt-2">Anfrage per E-Mail senden</h2>
+            <p className="prose-body mt-3 text-ink/70 lg:mt-1.5">
               Erzähl mir kurz von deiner Idee – ich melde mich so schnell wie möglich zurück.
             </p>
-            <div className="mt-6 rounded-[1.6rem] border border-cream-3 bg-white p-6 shadow-soft sm:p-7">
+            <div className="mt-6 rounded-[1.6rem] border border-cream-3 bg-white p-6 shadow-soft sm:p-7 lg:mt-4 lg:p-5">
               <ContactForm />
             </div>
           </Reveal>
@@ -85,7 +85,7 @@ export default function FinalCta() {
       </div>
 
       {/* Karte über volle Breite */}
-      <Reveal as="div" className="relative h-[360px] w-full sm:h-[420px]">
+      <Reveal as="div" className="relative h-[360px] w-full sm:h-[420px] lg:h-auto lg:min-h-0 lg:flex-1">
         <iframe
           title="Karte: Clitze Clein, Hammer Str. 174, Münster"
           src={OSM}
