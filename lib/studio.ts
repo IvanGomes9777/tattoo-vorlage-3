@@ -20,6 +20,7 @@ export const studio = {
   instagramHandle: "@clitze.clein",
   facebook: "https://www.facebook.com/clitze.clein",
   maps: "https://www.google.com/maps/place/Hammer+Str.+174,+48153+M%C3%BCnster",
+  googleReview: "https://maps.app.goo.gl/M8WpoFcFbBJbD4zg9",
   url: "https://clitze-clein.de",
   geo: { lat: 51.94, lng: 7.62 },
   ratingValue: "5.0",

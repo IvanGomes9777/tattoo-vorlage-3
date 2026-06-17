@@ -15,11 +15,11 @@ export default function FinalCta() {
     <section id="kontakt" className="relative scroll-mt-24 overflow-hidden">
       <div className="grid lg:grid-cols-2">
         {/* Persönliche Einladung */}
-        <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-16 text-cream sm:px-12">
-          <div className="grid items-center gap-8 sm:grid-cols-[1fr_auto]">
+        <div className="paper relative flex flex-col justify-center bg-oxblood-deep px-7 py-12 text-cream sm:px-12 sm:py-14 lg:px-14">
+          <div className="grid items-center gap-7 sm:grid-cols-[1fr_auto] lg:gap-9">
             <Stagger>
               <StaggerItem><p className="eyebrow">Everybody&rsquo;s welcome</p></StaggerItem>
-              <StaggerItem><h2 className="t-h1 mt-3 text-cream">Ich freu mich auf dich!</h2></StaggerItem>
+              <StaggerItem><h2 className="t-h2 mt-3 text-cream">Ich freu mich auf dich!</h2></StaggerItem>
               <StaggerItem>
                 <p className="prose-body mt-4 text-cream/80">
                   Schick mir deine Idee – wir rocken das gemeinsam. Versprochen.
@@ -63,21 +63,21 @@ export default function FinalCta() {
                 alt="Chiara, Tätowiererin von Clitze Clein"
                 width={260}
                 height={260}
-                className="h-40 w-40 rounded-full object-cover ring-4 ring-cream/15 sm:h-48 sm:w-48"
+                className="h-36 w-36 rounded-full object-cover ring-4 ring-cream/15 sm:h-44 sm:w-44"
               />
             </Reveal>
           </div>
         </div>
 
         {/* E-Mail-Anfrageformular */}
-        <div className="flex flex-col justify-center bg-cream-2/50 px-7 py-16 sm:px-12">
-          <Reveal delay={0.1}>
+        <div className="flex flex-col justify-center bg-cream-2/50 px-7 py-12 sm:px-12 sm:py-14 lg:px-14">
+          <Reveal delay={0.1} className="mx-auto w-full max-w-md lg:max-w-lg">
             <p className="eyebrow">Schreib mir</p>
             <h2 className="t-h2 mt-3">Anfrage per E-Mail senden</h2>
             <p className="prose-body mt-3 text-ink/70">
               Erzähl mir kurz von deiner Idee – ich melde mich so schnell wie möglich zurück.
             </p>
-            <div className="mt-6 rounded-[1.6rem] border border-cream-3 bg-white p-6 shadow-soft sm:p-7">
+            <div className="mt-5 rounded-[1.6rem] border border-cream-3 bg-white p-6 shadow-soft">
               <ContactForm />
             </div>
           </Reveal>
@@ -85,7 +85,7 @@ export default function FinalCta() {
       </div>
 
       {/* Karte über volle Breite */}
-      <Reveal as="div" className="relative h-[360px] w-full sm:h-[420px]">
+      <Reveal as="div" className="relative h-[300px] w-full sm:h-[360px] lg:h-[400px]">
         <iframe
           title="Karte: Clitze Clein, Hammer Str. 174, Münster"
           src={OSM}
